@@ -1,7 +1,6 @@
 class Solution {
     public int solution(int a, int b) {
-        String str = Integer.toString(a)+Integer.toString(b);
-        int result1 = Integer.parseInt(str);
+        int result1 = Integer.parseInt(a+""+b);
         int result2 = 2*a*b;
         
         if( result1 >= result2 ){
