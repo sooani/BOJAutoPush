@@ -10,9 +10,6 @@ class Solution {
                 evenNumbers.append(num);
             }
         }
-        int odd = Integer.parseInt(oddNumbers.toString());
-        int even = Integer.parseInt(evenNumbers.toString());
-        
-        return odd + even;
+        return Integer.parseInt(oddNumbers.toString())+Integer.parseInt(evenNumbers.toString());
     }
 }
