@@ -1,8 +1,7 @@
 class Solution {
     boolean solution(String s) {
-        int pCount = s.toLowerCase().replaceAll("[^p]", "").length();
-        int yCount = s.toLowerCase().replaceAll("[^y]", "").length();
+        s = s.toLowerCase();
         
-        return pCount == yCount;
+        return s.chars().filter(e -> 'p' == e).count() == s.chars().filter(e -> 'y' == e).count();
     }
 }
