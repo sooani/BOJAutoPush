@@ -1,12 +1,8 @@
-import java.util.Arrays;
+import java.util.stream.IntStream;
 class Solution {
     public int[] solution(int n) {
-        int[] answer = new int[(n + 1) / 2];
-        
-        for(int i = 0; i < answer.length; i++) {
-            answer[i] = 2 * i + 1;
-        }
-        Arrays.sort(answer);
-        return answer;
+        return IntStream.rangeClosed(0, n)
+            .filter(e -> e % 2 != 0)
+            .toArray();
     }
 }
