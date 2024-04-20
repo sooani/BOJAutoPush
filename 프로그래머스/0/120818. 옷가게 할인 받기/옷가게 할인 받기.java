@@ -1,15 +1,6 @@
 class Solution {
     public int solution(int price) {
-        int answer = 0;
-        if(price >= 500000){
-            answer = (int)(price * 0.8);
-        }else if(price >= 300000){
-            answer = (int)(price * 0.9);
-        }else if(price >= 100000){
-            answer = (int)(price * 0.95);
-        }else {
-            answer = price;
-        }
-        return answer;
+        double discountRate = price >= 500000 ? 0.2 : price >= 300000 ? 0.1 : price >= 100000 ? 0.05 : 0;
+        return price - (int)Math.round(price * discountRate);
     }
 }
