@@ -4,17 +4,20 @@ class Solution {
         
         int denom = denom1 * denom2;
         int numer = numer1 * denom2 + numer2 * denom1;
-        int min = Math.min(denom,numer);
-        for(int i = 2; i <= min; i++){
-            if(denom % i == 0 && numer % i == 0){
-                denom /= i;
-                numer /= i;
-                i = 1;
-            }
-        }
-        answer[0] = numer;
-        answer[1] = denom;
+        int gcd = gcd(numer,denom);
+        
+        answer[0] = numer / gcd;
+        answer[1] = denom / gcd;
         
         return answer;
+    }
+    
+    private int gcd(int a, int b) {
+        while(b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }
