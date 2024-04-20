@@ -1,5 +1,8 @@
 class Solution {
     public int solution(int[] sides) {
-         return (sides[0] < sides[1] + sides[2] && sides[1] < sides[0] + sides[2] && sides[2] < sides[0] + sides[1]) ? 1 : 2;
+        int x = sides[0];
+        int y = sides[1];
+        int z = sides[2];
+        return (x < y + z && y < x + z && z < x + y) ? 1 : 2;
     }
 }
