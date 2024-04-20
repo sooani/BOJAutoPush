@@ -13,11 +13,10 @@ class Solution {
     }
     
     private int gcd(int a, int b) {
-        while(b != 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
+        if(b == 0) {
+            return a;
+        }else {
+            return gcd(b, a % b);
         }
-        return a;
     }
 }
