@@ -9,7 +9,6 @@ class Solution {
                 num2 += num_list[i];
             }
         }
-        int answer = Math.max(num1,num2);
-        return answer;
+        return Math.max(num1,num2);
     }
 }
