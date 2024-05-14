@@ -1,22 +1,16 @@
-import java.util.*;
-
 class Solution {
     public int solution(String[] spell, String[] dic) {
-        String spellStr = String.join("", spell);
-        
-        for (String word : dic) {
-            boolean containsAllChars = true;
-            for (char c : spellStr.toCharArray()) {
-                if (word.indexOf(c) == -1) {
-                    containsAllChars = false;
-                    break;
+        for(int i = 0; i < dic.length; i++){
+            int answer = 0;
+            for(int j = 0; j < spell.length; j++){
+                if(dic[i].contains(spell[j])){
+                    answer ++;
                 }
             }
-            if (containsAllChars) {
+            if(answer==spell.length) {
                 return 1;
             }
         }
-        
         return 2;
     }
 }
