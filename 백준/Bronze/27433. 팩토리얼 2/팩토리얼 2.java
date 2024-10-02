@@ -4,12 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
-        long result = 1;
-        
-        // N이 0이면 0! = 1로 처리
-        for (int i = 1; i <= N; i++) {
-            result *= i;
-        }
+        long result = factorial(N);
         System.out.println(result);
+    }
+    public static long factorial(int N){
+        if(N == 0){
+            return 1;
+        }else {
+            return N * factorial(N-1);
+        }
     }
 }
